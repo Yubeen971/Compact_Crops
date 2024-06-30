@@ -8,13 +8,31 @@ public class CameraRotateAround : MonoBehaviour
     public float distance = 5.0f; // 블록과 카메라 사이의 거리
     public float rotationSpeed = 20.0f; // 회전 속도
     public float verticalAngle = 0.0f; // 수직 각도 조절
+    public float initialHorizontalAngle = 85f; // 초기 수평 각도
+    public float angleChangeSpeed = 30.0f; // 각도 변경 속도
 
-    private float currentAngle = 0.0f;
+    private float currentAngle;
+
+    void Start()
+    {
+        // 초기 수평 각도를 설정
+        currentAngle = initialHorizontalAngle;
+    }
 
     void Update()
     {
         // 시계 방향으로 회전
         currentAngle += rotationSpeed * Time.deltaTime;
+
+        // 수직 각도 조절 (위/아래 화살표 키로 조절)
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            verticalAngle += angleChangeSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            verticalAngle -= angleChangeSpeed * Time.deltaTime;
+        }
 
         // 각도를 라디안으로 변환
         float horizontalRad = currentAngle * Mathf.Deg2Rad;
