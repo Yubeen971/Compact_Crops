@@ -5,11 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private Animator animator;
+
     public float speed;
     private Vector2 move;
-
-    //Interaction components
-    PlayerInteraction playerInteraction;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -19,29 +18,14 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Get interaction component
-        playerInteraction = GetComponentInChildren<PlayerInteraction>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         movePlayer();
-
-        //Runs the function that handles all interaction
-        Interact();
-    }
-
-    public void Interact()
-    {
-        //Tool interaction
-        if (Input.GetButtonDown("Fire1"))
-        {
-            //Interact
-            playerInteraction.Interact();
-        }
-
-        //TODO: Set up item interaction
+        animator.SetTrigger("Jump");
     }
 
     public void movePlayer()
