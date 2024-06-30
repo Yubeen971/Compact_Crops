@@ -11,9 +11,4 @@ public class EquipmentData : ItemData
     }
     public ToolType toolType;
 
-
-
-
-
-
 }
