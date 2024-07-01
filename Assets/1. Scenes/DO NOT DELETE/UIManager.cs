@@ -32,6 +32,16 @@ public class UIManager : MonoBehaviour
         plantingPanel.SetActive(false);
     }
 
+    public void PlantTree()
+    {
+        if (GameManager.instance.SpendCoins(20))  // Example cost
+        {
+            GameObject[] treeStages = Resources.LoadAll<GameObject>("treeStages");
+            currentBlock.PlantCrop(treeStages, 25f);  // Example growth time
+            HidePlantingUI();
+        }
+    }
+
     public void PlantTom()
     {
         if (GameManager.instance.SpendCoins(6))  // Example cost
