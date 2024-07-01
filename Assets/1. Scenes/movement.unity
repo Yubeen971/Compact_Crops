@@ -524,6 +524,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 1263c5c5f1c53d941996ba932a56be28, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &277446853
 GameObject:
   m_ObjectHideFlags: 0
@@ -10760,6 +10761,8 @@ MeshRenderer:
 >>>>>>> 13a9687513023f7dbd7b0c60e73c6a5805eb8a57
 =======
 >>>>>>> parent of 4389f70 (stash)
+=======
+>>>>>>> parent of 4389f70 (stash)
 --- !u!1001 &415967871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10923,6 +10926,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4425155702340450573, guid: f12845bb4d1709a499e97026b8068627, type: 3}
   m_PrefabInstance: {fileID: 415967871}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &599790164
@@ -49843,6 +49847,8 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 =======
 >>>>>>> 13a9687513023f7dbd7b0c60e73c6a5805eb8a57
+=======
+>>>>>>> parent of 4389f70 (stash)
 =======
 >>>>>>> parent of 4389f70 (stash)
 --- !u!1 &1004615531
