@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     public GameObject plantingPanel;
     public Text coinText;
+    public Text coinText2;
 
     private PlantableBlock currentBlock;
 
@@ -64,6 +65,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateCoinDisplay(int amount)
     {
-        coinText.text = "Coins: " + amount;
+        coinText.text = "" + amount;
+        coinText2.text = "" + amount;
     }
 }
