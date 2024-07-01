@@ -9,8 +9,6 @@ public class PlantableBlock : MonoBehaviour
     private bool isPlanted = false;  // Whether the block has a planted crop
     public float plantOffsetY = 1f;  // The Y-axis offset for the planted crop
 
-    public AudioSource harvest;
-
     void Update()
     {
         if (isPlanted)
@@ -99,7 +97,6 @@ public class PlantableBlock : MonoBehaviour
     {
         if (isPlanted && currentStage == cropStages.Length - 1)
         {
-            harvest.Play();
             Harvest();
         }
         else if (!isPlanted)
