@@ -73,6 +73,9 @@ public class PlantableBlock : MonoBehaviour
                 case "leafStage1":
                     coinAmount = 3;  // Adjusted coin amount for Leaf crop
                     break;
+                case "treeStage1":
+                    coinAmount = 50;  // Adjusted coin amount for Tree crop
+                    break;
                 default:
                     coinAmount = 0;   // Default coin amount if not specified
                     break;
