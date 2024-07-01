@@ -32,20 +32,22 @@ public class UIManager : MonoBehaviour
         plantingPanel.SetActive(false);
     }
 
-    public void PlantWheat()
+    public void PlantTom()
     {
-        if (GameManager.instance.SpendCoins(5)) // Example cost
+        if (GameManager.instance.SpendCoins(6))  // Example cost
         {
-            currentBlock.PlantCrop(Resources.LoadAll<GameObject>("WheatStages"), 10f); // Example growth time
+            GameObject[] tomStages = Resources.LoadAll<GameObject>("tomStages");
+            currentBlock.PlantCrop(tomStages, 5f);  // Example growth time
             HidePlantingUI();
         }
     }
 
-    public void PlantCorn()
+    public void PlantLeaf()
     {
-        if (GameManager.instance.SpendCoins(10)) // Example cost
+        if (GameManager.instance.SpendCoins(2))  // Example cost
         {
-            currentBlock.PlantCrop(Resources.LoadAll<GameObject>("CornStages"), 15f); // Example growth time
+            GameObject[] leafStages = Resources.LoadAll<GameObject>("leafStages");
+            currentBlock.PlantCrop(leafStages, 1f);  // Example growth time
             HidePlantingUI();
         }
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public int coins = 100;
+    public int coins = 6;
 
     void Awake()
     {
