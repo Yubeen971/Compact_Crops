@@ -10,6 +10,10 @@ public class PlantableBlock : MonoBehaviour
     public float plantOffsetY = 1f;  // The Y-axis offset for the planted crop
 
     public AudioSource harvest;
+<<<<<<< Updated upstream
+=======
+    public AudioClip sfx2;
+>>>>>>> Stashed changes
 
     void Update()
     {
@@ -70,7 +74,7 @@ public class PlantableBlock : MonoBehaviour
             switch (cropStages[0].name)
             {
                 case "tomStage1":
-                    coinAmount = 14;  // Example coin amount for Tom crop
+                    coinAmount = 14;  // Example coin amount for Tom crop   
                     break;
                 case "leafStage1":
                     coinAmount = 3;  // Adjusted coin amount for Leaf crop
@@ -86,6 +90,8 @@ public class PlantableBlock : MonoBehaviour
             GameManager.instance.AddCoins(coinAmount);
             isPlanted = false;
             currentStage = 0;
+
+            harvestsfx();
 
             // Destroy the crop
             foreach (Transform child in transform)
@@ -106,5 +112,11 @@ public class PlantableBlock : MonoBehaviour
         {
             UIManager.instance.ShowPlantingUI(this);
         }
+    }
+
+    public void harvestsfx()
+    {
+        harvest.clip = sfx2;
+        harvest.Play();
     }
 }
