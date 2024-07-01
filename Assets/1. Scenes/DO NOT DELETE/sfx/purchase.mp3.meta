@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 guid: 9aff50cb3d6ac4948bf79b2e1bc4beeb
 =======
 guid: b00feb19e63858442945ac3c13f07470
 >>>>>>> parent of 0398bab (Revert "sfx")
-=======
-guid: b00feb19e63858442945ac3c13f07470
->>>>>>> Stashed changes
 AudioImporter:
   externalObjects: {}
   serializedVersion: 7

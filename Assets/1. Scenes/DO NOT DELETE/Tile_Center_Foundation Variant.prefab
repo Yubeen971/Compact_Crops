@@ -104,5 +104,3 @@ MonoBehaviour:
   cropStages: []
   growthTime: 0
   plantOffsetY: 1
-  harvest: {fileID: 0}
-  sfx2: {fileID: 8300000, guid: d3b1bc5571a5b3f43b1072693fc21abe, type: 3}
