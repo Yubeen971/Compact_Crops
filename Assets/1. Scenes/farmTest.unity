@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 26768049}
   - component: {fileID: 26768048}
   m_Layer: 5
-  m_Name: crop1
+  m_Name: tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 544030779}
   - component: {fileID: 544030778}
   m_Layer: 5
-  m_Name: crop coin
+  m_Name: leaf coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Leaf: 5 coin'
+  m_text: 'Leaf: 2 coins'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 548182858}
   - component: {fileID: 548182857}
   m_Layer: 5
-  m_Name: crop coin
+  m_Name: tom coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tomato: 10 coin'
+  m_text: 'Tomato: 6 coins'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -909,7 +909,7 @@ GameObject:
   - component: {fileID: 667472222}
   - component: {fileID: 667472221}
   m_Layer: 5
-  m_Name: crop2
+  m_Name: leaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
