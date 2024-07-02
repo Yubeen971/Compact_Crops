@@ -8,6 +8,7 @@ public class PlantableBlock : MonoBehaviour
     private float timer = 0;  // Timer to track growth time
     private bool isPlanted = false;  // Whether the block has a planted crop
     public float plantOffsetY = 1f;  // The Y-axis offset for the planted crop
+    public AudioSource money;
 
     void Update()
     {
@@ -81,6 +82,7 @@ public class PlantableBlock : MonoBehaviour
                     break;
             }
 
+            money.Play();
             GameManager.instance.AddCoins(coinAmount);
             isPlanted = false;
             currentStage = 0;

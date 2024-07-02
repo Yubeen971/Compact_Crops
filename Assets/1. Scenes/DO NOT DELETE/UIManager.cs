@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public Text coinText2;
 
     private PlantableBlock currentBlock;
+    public AudioSource fail;
+    public AudioSource plant;
 
     void Awake()
     {
@@ -37,9 +39,14 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.instance.SpendCoins(20))  // Example cost
         {
+            plant.Play();
             GameObject[] treeStages = Resources.LoadAll<GameObject>("treeStages");
             currentBlock.PlantCrop(treeStages, 25f);  // Example growth time
             HidePlantingUI();
+        }
+        else
+        {
+            fail.Play();
         }
     }
 
@@ -47,9 +54,14 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.instance.SpendCoins(6))  // Example cost
         {
+            plant.Play();
             GameObject[] tomStages = Resources.LoadAll<GameObject>("tomStages");
             currentBlock.PlantCrop(tomStages, 5f);  // Example growth time
             HidePlantingUI();
+        }
+        else
+        {
+            fail.Play();
         }
     }
 
@@ -57,9 +69,14 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.instance.SpendCoins(2))  // Example cost
         {
+            plant.Play();
             GameObject[] leafStages = Resources.LoadAll<GameObject>("leafStages");
             currentBlock.PlantCrop(leafStages, 1f);  // Example growth time
             HidePlantingUI();
+        }
+        else
+        {
+            fail.Play();
         }
     }
 
