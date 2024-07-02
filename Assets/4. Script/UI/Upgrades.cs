@@ -50,7 +50,7 @@ public class Upgrades : MonoBehaviour
             land.Play();
             level++;
             upgradeCost += 500; // 업그레이드 비용 증가
-            UpdateLandCoinDisplay(upgradeCost);
+            UpgradeOneText.text = "Land: $" + upgradeCost;
             UpdateLandLVDisplay(level);
             if(level == 2)
             {
