@@ -9,6 +9,8 @@ public class PlantableBlock : MonoBehaviour
     private bool isPlanted = false;  // Whether the block has a planted crop
     public float plantOffsetY = 1f;  // The Y-axis offset for the planted crop
     public AudioSource money;
+    public AudioSource land;
+
 
     void Update()
     {
@@ -103,7 +105,17 @@ public class PlantableBlock : MonoBehaviour
         }
         else if (!isPlanted)
         {
+            land.Play();
+            Invoke("StopLandAudio", 0.5f);
             UIManager.instance.ShowPlantingUI(this);
         }
+    }
+
+    
+
+    void StopLandAudio()
+    {
+        // 오디오 정지
+        land.Stop();
     }
 }

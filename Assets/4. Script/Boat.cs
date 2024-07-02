@@ -8,6 +8,8 @@ public class Boat : MonoBehaviour
     private float currentSpeed = 0.0f;  // 현재 속도
     public float acceleration = 0.5f;  // 가속도 (속도 증가량)
     private bool move = false;  // 움직임 상태
+    public AudioSource boat;
+    public AudioSource Wind;
 
     void Update()
     {
@@ -15,6 +17,11 @@ public class Boat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             move = true;
+            boat.Play();
+            Invoke("BoatMove",15f);
+            Invoke("windStop",25f);
+
+            Invoke("BoatStop",63f);
         }
 
         // 움직임 상태가 true이고, 현재 속도가 최대 속도보다 작은 경우
@@ -29,5 +36,23 @@ public class Boat : MonoBehaviour
         {
             transform.Translate(Vector3.left * currentSpeed * Time.deltaTime);
         }
+    }
+
+
+    void BoatStop()
+    {
+        move = false;
+        transform.position = new Vector3(1f, -3.45f, 5f);
+
+    }
+
+    void BoatMove()
+    {
+        boat.Stop();
+        Wind.Play();
+    }
+    void windStop()
+    {
+        Wind.Stop();
     }
 }
