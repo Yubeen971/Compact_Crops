@@ -11,6 +11,14 @@ public class Upgrades : MonoBehaviour
     public Text resultText;
     public Text levelTextLand;
     public Text levelTextDice;
+    public AudioSource diceUpgradeSource;
+    public AudioSource diceUpgradeSource2;
+    public AudioSource fail;
+    public AudioSource land;
+    public AudioSource boat;
+
+
+
 
 
     
@@ -20,7 +28,7 @@ public class Upgrades : MonoBehaviour
     public int upgradeCost = 100; // 업그레이드 비용
 
 
-    public int DiceCoin = 50;
+    public int DiceCoin = 200;
 
     public int Dicelevel = 1;
     public int DiceCost = 20;
@@ -39,6 +47,7 @@ public class Upgrades : MonoBehaviour
     {   
         if (GameManager.instance.SpendCoins(upgradeCost))
         {
+            land.Play();
             level++;
             upgradeCost += 500; // 업그레이드 비용 증가
             UpdateLandCoinDisplay(upgradeCost);
@@ -59,6 +68,7 @@ public class Upgrades : MonoBehaviour
         else
         {
             Debug.Log("Not enough coins to upgrade.");
+            fail.Play();
         }
    
     }
@@ -66,11 +76,13 @@ public class Upgrades : MonoBehaviour
     {   
         if (GameManager.instance.SpendCoins(10000))
         {
+            boat.Play();
             objectToMoveBoat.transform.position = new Vector3(1f, -0.622f, -5f);
         }
         else
         {
             Debug.Log("Not enough coins to upgrade.");
+            fail.Play();
         }
         
     }
@@ -79,16 +91,27 @@ public class Upgrades : MonoBehaviour
         if (GameManager.instance.SpendCoins(DiceCost))
         {
             int diceResult = random.Next(1, 7); // 1부터 6까지의 랜덤 숫자 생성
-            resultText.text = "Dice Result: " + diceResult;
+            resultText.text = "Result: " + diceResult;
+            
         if (diceResult == 6)
         {
+            diceUpgradeSource2.Play();
             GameManager.instance.AddCoins(DiceCoin);
             Dicelevel++;
             DiceCost = 2*DiceCost;
-            DiceCoin = 5*DiceCost;
+            DiceCoin = 10 *DiceCost;
             UpdateDiceLVDisplay(Dicelevel);
             UpdateDiceCoinDisplay(DiceCost);
         }
+        else
+        {
+            diceUpgradeSource.Play();
+        }
+        }
+        else
+        {
+            Debug.Log("Not enough coins to upgrade.");
+            fail.Play();
         }
     }
 
@@ -137,19 +160,4 @@ public class Upgrades : MonoBehaviour
         levelTextDice.text = "Level " + amount;
     }
 
-
-    void rollDice()
-    {
-        int diceResult = random.Next(1, 7); // 1부터 6까지의 랜덤 숫자 생성
-        resultText.text = "Dice Result: " + diceResult;
-        if (diceResult == 6)
-        {
-            GameManager.instance.AddCoins(DiceCoin);
-            Dicelevel++;
-            DiceCost *= 2;
-            DiceCoin *= 5;
-            UpdateDiceLVDisplay(Dicelevel);
-            UpdateDiceCoinDisplay(DiceCost);
-        }
-    }
 }
